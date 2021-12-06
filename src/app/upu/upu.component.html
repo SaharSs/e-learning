@@ -1,0 +1,25 @@
+<div class="container">
+
+    <form #f="ngForm" (ngSubmit)="update(f)">
+        <input type="text" class="form-control" name="firstName" [(ngModel)]="datauser.firstName">
+        <input type="text" class="form-control" name="lastName" [(ngModel)]="datauser.lastName">
+        
+        <input type="text" class="form-control" name="email" [(ngModel)]="datauser.email">
+        <input type="text" class="form-control" name="password" [(ngModel)]="datauser.password">
+        <input type="text" class="form-control" name="bio" [(ngModel)]="datauser.bio">
+       
+        <label for="pet-select">role :</label>
+                   <select name="role" id="pet-select" #role="ngModel" ngModel required>
+                    <option value="">--Please choose an option--</option>
+                    <option value="admin">admin</option>
+                    <option value="teacher">teacher</option>
+                    <option value="student">student</option>
+                    
+                   </select>
+                   
+        <input type="text" class="form-control" name="pays" [(ngModel)]="datauser.pays">
+        <input type="text" class="form-control" name="uid" [(ngModel)]="datauser.uid">
+        <div class="alert alert-success" *ngIf="successUpdate">{{successUpdate}}</div>
+        <button class="btn btn-success" type="submit">Update now!</button></form>
+      </div>
+      
