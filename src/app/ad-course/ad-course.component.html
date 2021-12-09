@@ -1,0 +1,35 @@
+<div class="body"  >
+
+    
+    <table class="table" >
+     <thead class="table-dark">
+<tr class="text-center">
+  <th scope="col">course</th>
+  <th scope="col">author</th>
+  <th scope="col">description</th>
+  <th scope="col">duration</th>
+  <th scope="col">image</th>
+  <th scope="col">original</th>
+  <th scope="col">selling</th>
+  <th scope="col" colspan="3">options</th>
+</tr>
+</thead>
+<tbody  *ngFor="let item of dataArray" >
+        
+                <tr>
+                  <td><h5 class="card-title">{{item.course}}</h5></td>
+                  <td><h5 class="card-title">{{item.author}}</h5></td>
+                
+                  <td><p class="card-text">{{item.description}}</p></td>  
+                  <td><p class="card-text">{{item.duration}}</p></td>
+                  <td><img  [src]="item.image" width="30px" height="30px"></td>
+                      
+                  <td><p class="card-text">{{item.original}}</p></td>
+                 
+                  <td><p class="card-text">{{item.selling}}</p></td>
+                  
+                  
+                </tr>
+</tbody>
+              </table> 
+</div>

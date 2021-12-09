@@ -1,0 +1,100 @@
+
+
+<div id="fh5co-course-categories">
+    <div class="container">
+        <div class="row animate-box">
+            <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+                <h2>Course categories</h2>
+                <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+            </div>
+        </div>
+      {{n}}
+        <div class="row">
+            
+            <div class="col-md-6 ">
+                <div class="uk-card uk-card-default uk-width-1-2@m">
+                    
+            <img [src]="datauser.image"  alt="..."   style="width: 11rem;height:7rem;" >
+        
+         </div>
+        </div>
+         <div class="col-sm-5">
+       
+             <h5 >{{datauser.course}}</h5>
+             <p>{{datauser.description}}</p>   
+       <div *ngIf="datauser.selling=='0'">
+   <p>{{datauser.original}}</p>
+     </div>
+    <div *ngIf="datauser.selling!='0'">
+    <p><s>{{datauser.original}}</s>&nbsp;{{datauser.selling}}</p> 
+      
+  </div>
+  <div class="col-md-2">
+  <button class="btn btn-primary" (click)="buy(datauser.id)">
+        buy now
+     </button>
+     </div>
+
+     
+    
+</div>
+<table class="table"  >
+    <thead class="table-dark">
+<tr class="text-center">
+ <th scope="col">lesson name</th>
+ <th scope="col">description</th>
+ 
+
+</tr>
+</thead>
+
+       <tbody *ngFor="let f of dataArray">
+          
+               <tr  *ngIf="f.courseid==keyParams" width="50%">
+                 
+                 <td><h5 class="card-title">{{f.lesson}}</h5></td>
+                 <td><h5 class="card-title">{{f.lessond}}</h5></td>
+              
+              
+               
+      </tr>
+      
+      </tbody>
+
+             </table> 
+  
+ 
+
+     
+</div>
+</div>
+</div>
+<form #h="ngForm" (ngSubmit)="message(h)" id="stripe-login">
+   <div>
+    <label for="student">student id</label>
+<select name="fee"  #fee="ngModel" ngModel required>
+    <option [value]="j">{{j}}</option>
+</select>
+</div>
+<label for="course">course id</label>
+<select name="idc"  #idc="ngModel" ngModel required>
+    <option [value]="keyParams">{{keyParams}}</option>
+</select>
+  <div class="field padding-bottom--24">
+      <label for="message">write feedback</label>
+      <input type="text" name="feedback"  #feedback="ngModel" ngModel required>
+      
+  </div>
+  <div class="field padding-bottom--24">
+      <input type="submit" name="submit" class="btn btn-success" value="submit">
+    </div>
+  
+  </form>
+
+  <div *ngFor="let m of dtz">
+       
+    <div *ngIf="m.idc==keyParams">
+    <p>{{m.feedback}}</p>
+    </div>   
+
+</div>

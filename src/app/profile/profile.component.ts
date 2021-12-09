@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
 dataProfile={
 firstName:"",
 
-Image:"",
+image:"",
 bio:"",
 uid:""
 };
@@ -30,7 +30,7 @@ image: ElementRef | undefined
       console.log(data.data())
       this.dataProfile.firstName=data.get('firstName')
      
-      this.dataProfile.Image=data.get('image')
+      this.dataProfile.image=data.get('image')
       this.dataProfile.bio=data.get('bio')
       this.dataProfile.uid=this.ll
     })
@@ -54,7 +54,10 @@ image: ElementRef | undefined
         data.ref.getDownloadURL().then(url=>{
           this.fs.collection("users").doc(this.dataProfile.uid).update({
             image:url
+          }).then(()=>{
+            window.location.reload()
           })
+
         })
       })
   }

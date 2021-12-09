@@ -24,21 +24,30 @@
 					<div  class="navbar-nav mr-auto">
 						<ul>
 							<li class="active"><a routerLink="/">Home</a></li>
-							<li><a routerLink="courses.html" *ngIf="isuser">Courses</a></li>
-							<li><a routerLink="teacher" *ngIf="isuser">Teacher</a></li>
-							<li><a routerLink="about" *ngIf="isuser">About</a></li>
+							<li><a routerLink="courses" *ngIf="isuser && !isAdmin">Courses</a></li>
+							<li><a routerLink="teacher" *ngIf="isuser &&  !isAdmin ">Teacher</a></li>
+							<li><a routerLink="about" *ngIf="isuser && !isAdmin">About</a></li>
 							
 						
-							<li><a href="contact.html" *ngIf="isAdmin">Contact</a></li>
+							<li><a routerLink="contact" *ngIf="isuser && !isAdmin">Contact</a></li>
 						    <li><a  routerLink="ad-user" *ngIf="isAdmin">ad-user</a></li>
                             <li><a routerLink="ad-courses" *ngIf="isAdmin">ad-courses</a></li>
-					        <li><a routerLink="profil" *ngIf="isAdmin">profil</a></li>
-					
+					        <li><a routerLink="profil" *ngIf="isuser && !isAdmin">profil</a></li>
+						
+							<li class="btn-cta  text-right menu-1"><a routerLink="ad-video" *ngIf="isuser"><span>ad-video</span></a></li>
+                        	
+							
+							<li class="btn-cta  text-right menu-1"><a routerLink="ad-course" *ngIf="isuser"><span>ad-course</span></a></li>
+                        	
+							<li class="btn-cta  text-right menu-1"><a routerLink="course-v" *ngIf="isuser"><span>course-v</span></a></li>
+                        	
+			
 							<li class="btn-cta text-right menu-1 "><a *ngIf="!isuser" routerLink="login"><span>Login</span></a></li>
 							<li class="btn-cta  text-right menu-1"><a routerLink="register" *ngIf="!isuser"><span>register</span></a></li>
                         	
-                            <li class="btn-cta  text-right menu-1"><a href="#" *ngIf="isuser"><span>Create a Course</span></a></li>
-							<a class="btn btn-danger" (click)="logout()"  *ngIf="isuser">Logout</a>					
+                            <li class="btn-cta  text-right menu-1"><a routerLink="create-c" *ngIf="isuser"><span>Create a Course</span></a></li>
+							<li><a routerLink="shopping" *ngIf="isuser && !isAdmin"><i class="fas fa-shopping-cart"></i></a></li>
+							<button (click)="logout()"  *ngIf="isuser">Logout</button>					
                         </ul>
 					
 				</div>

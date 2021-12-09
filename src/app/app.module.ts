@@ -22,6 +22,18 @@ import { UpuComponent } from './upu/upu.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { AdCoursesComponent } from './ad-courses/ad-courses.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CoursesComponent } from './courses/courses.component';
+import { ContactComponent } from './contact/contact.component';
+import { CreateCComponent } from './create-c/create-c.component';
+import { FooterComponent } from './footer/footer.component';
+import { CourseVComponent } from './course-v/course-v.component';
+import { AdCourseComponent } from './ad-course/ad-course.component';
+import { AdVideoComponent } from './ad-video/ad-video.component';
+import { CoursedetailsComponent } from './coursedetails/coursedetails.component';
+import { ShoppingComponent } from './shopping/shopping.component';
+import { MycoursesComponent } from './mycourses/mycourses.component';
+import { HeaderComponent } from './header/header.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +50,18 @@ import { ProfileComponent } from './profile/profile.component';
     TeacherComponent,
     AdCoursesComponent,
     ProfileComponent,
+    CoursesComponent,
+    ContactComponent,
+    CreateCComponent,
+    FooterComponent,
+    CourseVComponent,
+    AdCourseComponent,
+    AdVideoComponent,
+    CoursedetailsComponent,
+    ShoppingComponent,
+    MycoursesComponent,
+    HeaderComponent,
+    FeedbackComponent,
     
   ],
   imports: [

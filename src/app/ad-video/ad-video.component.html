@@ -1,0 +1,30 @@
+
+<div class="body"  >
+
+    
+    <table class="table" >
+     <thead class="table-dark">
+<tr class="text-center">
+  <th scope="col">courseid</th>
+  <th scope="col">courseN</th>
+  <th scope="col">lesson</th>
+  <th scope="col">lessond</th>
+  <th scope="col">video</th>
+  <th scope="col" colspan="3">options</th>
+</tr>
+</thead>
+<tbody  *ngFor="let item of dataArray" >
+        
+                <tr>
+                  <td><h5 class="card-title">{{item.courseid}}</h5></td>
+                  <td><h5 class="card-title">{{item.courseN}}</h5></td>
+                
+                  <td><p class="card-text">{{item.lesson}}</p></td>  
+                  <td><p class="card-text">{{item.lessond}}</p></td>
+                  <td><p class="card-text">{{item.video}}</p></td>
+                 
+                  
+                </tr>
+</tbody>
+              </table> 
+</div>

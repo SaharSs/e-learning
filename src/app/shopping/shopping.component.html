@@ -1,0 +1,96 @@
+<script src="https://js.stripe.com/v3"></script>
+<div class="body">
+   
+
+
+    <table id="table"
+        class="table"
+     
+    >
+        <thead class="table-dark">
+            <tr class="text-center">
+            <th>Name couse</th>
+            <th>description</th>
+            
+            <th>price</th>
+
+            <th>Total</th>
+           
+            <th>Options</th>
+            </tr>
+        </thead>
+        
+        <tbody  >
+           
+            <tr *ngFor="let g of fm; index as i">
+               
+                <td>{{g.course }}</td>
+                <td>{{g.description}}</td>
+                <td>
+                <div *ngIf="g.selling==0">
+                {{g.original }}
+                </div>
+                <div *ngIf="g.selling!=0">
+                    {{g.selling }}
+                    </div>
+                    </td>
+               
+                
+<td>
+                    <div *ngIf="g.selling==0">
+                {{(g.original ) }}
+                    </div>
+                    
+                    <div *ngIf="g.selling!=0">
+                        {{g.selling }}
+                        </div>
+                </td>
+             
+               
+                <td>
+
+                    <span class="text-danger" style="cursor: pointer;"><i class="fa fa-trash"
+                    
+                    
+                    >
+                    </i></span>&nbsp;
+                    <span class="text-save" style="cursor: pointer;"><i class="fas fa-pen-square"
+                     
+                    >
+                        </i></span>
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td colspan="3">montant Total</td>
+                
+                <td >
+                  
+
+                
+                    <button type="button" id="checkout-button"
+                    class="btn btn-info" (click)="confirm()">
+              
+                
+                
+        confirm
+                </button>
+
+              
+               
+                </td>
+                <td>
+                    <button    class="btn btn-danger btn pull-right" >delete</button>
+                </td>
+                
+            </tr>
+            
+        
+        </tbody>
+    
+    </table>
+    
+ 
+</div>
+
